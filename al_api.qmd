@@ -1,0 +1,14 @@
+---
+title: "Allison Marietta - Creative Writer"
+format:
+  html:
+    toc: true
+    toc-location: left
+    self-contained: true
+jupyter: python3
+kernel: al_api
+---
+```{python}
+git clone https://github.com/ashmarietta/mfa-portfolio.git
+cd mfa-portfolio
+```

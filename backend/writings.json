@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Sample Poem",
+    "type": "poem",
+    "content": "This is a placeholder poem used to test the API."
+  },
+  {
+    "id": 2,
+    "title": "Sample Short Prose",
+    "type": "prose",
+    "content": "This is a short prose placeholder for the portfolio."
+  }
+]
