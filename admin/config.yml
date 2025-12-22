@@ -1,0 +1,50 @@
+backend:
+  name: github
+  repo: ashmarietta/mfa-portfolio
+  branch: main
+
+media_folder: "frontend/images"
+public_folder: "/images"
+
+collections:
+  # 1) Single-page sections (fixed pages)
+  - name: "pages"
+    label: "Site Pages"
+    files:
+      - label: "WHO I AM"
+        name: "who_i_am"
+        file: "content/pages/who_i_am.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string", default: "WHO I AM" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "WHAT I’M WORKING ON"
+        name: "what_im_working_on"
+        file: "content/pages/what_im_working_on.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string", default: "WHAT I’M WORKING ON" }
+          - { label: "WHAT I’M READING", name: "reading", widget: "markdown" }
+          - { label: "WHAT I’M WRITING", name: "writing", widget: "markdown" }
+
+      - label: "HOW TO REACH ME"
+        name: "how_to_reach_me"
+        file: "content/pages/how_to_reach_me.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string", default: "HOW TO REACH ME" }
+          - { label: "Email", name: "email", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  # 2) Many entries (finished works)
+  - name: "works"
+    label: "WHAT I’VE WRITTEN"
+    folder: "content/works"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options: ["Poem", "Short Story", "Novel Excerpt", "Essay", "Other"]
+      - { label: "Published", name: "published", widget: "boolean", default: true, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
