@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <title>Content Manager</title>
+
+    <!-- Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </head>
-  <body></body>
+
+  <body>
+    <!-- Load Decap CMS AFTER body exists -->
+    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+  </body>
 </html>
