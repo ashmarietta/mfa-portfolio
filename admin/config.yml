@@ -3,11 +3,10 @@ backend:
   repo: ashmarietta/mfa-portfolio
   branch: main
 
-media_folder: "frontend/images"
+media_folder: "images"
 public_folder: "/images"
 
 collections:
-  # 1) Single-page sections (fixed pages)
   - name: "pages"
     label: "Site Pages"
     files:
@@ -34,7 +33,6 @@ collections:
           - { label: "Email", name: "email", widget: "string", required: false }
           - { label: "Body", name: "body", widget: "markdown", required: false }
 
-  # 2) Many entries (finished works)
   - name: "works"
     label: "WHAT I’VE WRITTEN"
     folder: "content/works"
