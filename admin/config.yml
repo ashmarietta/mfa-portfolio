@@ -8,7 +8,7 @@ public_folder: "/images"
 
 collections:
   - name: "pages"
-    label: "Site Pages"
+    label: "SITE PAGES"
     files:
       - label: "WHO I AM"
         name: "who_i_am"
@@ -33,7 +33,7 @@ collections:
           - { label: "Email", name: "email", widget: "string", required: false }
           - { label: "Body", name: "body", widget: "markdown", required: false }
 
-  - name: "works"
+  - name: "what_ive_written"
     label: "WHAT I’VE WRITTEN"
     folder: "content/works"
     create: true
@@ -43,6 +43,6 @@ collections:
       - label: "Type"
         name: "type"
         widget: "select"
-        options: ["Poem", "Short Story", "Novel Excerpt", "Essay", "Other"]
+        options: ["Poem", "Short Story", "Novel Excerpt", "Essay", "Review", "Article", "Other"]
       - { label: "Published", name: "published", widget: "boolean", default: true, required: false }
       - { label: "Body", name: "body", widget: "markdown" }

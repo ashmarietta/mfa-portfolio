@@ -1,4 +1,4 @@
 ---
-title: "WHO I AM"
 ---
-Write your bio here.
+
+Placeholder. Edit me in the CMS.
