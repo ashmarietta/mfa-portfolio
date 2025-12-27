@@ -18,13 +18,25 @@
 
 <body>
 
-  <section id="who_i_am"></section>
+  <nav class="sidebar">
+    <h2>Allison Marietta</h2>
+    <ul>
+      <li><a href="#who_i_am">Who I Am</a></li>
+      <li><a href="#what_im_working_on">What I’m Working On</a></li>
+      <li><a href="#what_ive_written">What I’ve Written</a></li>
+      <li><a href="#how_to_reach_me">How To Reach Me</a></li>
+    </ul>
+  </nav>
 
-  <section id="what_im_working_on"></section>
+  <main>
+    <section id="who_i_am"></section>
 
-  <section id="how_to_reach_me"></section>
+    <section id="what_im_working_on"></section>
 
-  <section id="what_ive_written"></section>
+    <section id="what_ive_written"></section>
+
+    <section id="how_to_reach_me"></section>
+  </main>
 
   <script>
     if (window.netlifyIdentity) {
@@ -38,8 +50,9 @@
     }
   </script>
 
-  <!-- your JS must load LAST -->
+  <!-- your JS must stay last -->
   <script src="script.js"></script>
 
 </body>
+
 </html>
