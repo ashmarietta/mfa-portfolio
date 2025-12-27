@@ -1,4 +1,4 @@
 ---
-title: "WHO I AM"
+title: WHO I AM
 ---
-Write your bio here.
+Allie Marietta does stuff... (home, resume, SLU background, writing plans, interests)
