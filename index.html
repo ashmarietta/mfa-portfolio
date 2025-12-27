@@ -2,31 +2,44 @@
 <html>
 <head>
   <title>Allison Marietta</title>
-  <head>
-  <title>Your Sister’s Name</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Netlify Identity -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
 <body>
-  <h1>Selected Works</h1>
-  <div id="works"></div>
+
+  <section id="who_i_am"></section>
+
+  <section id="what_im_working_on"></section>
+
+  <section id="how_to_reach_me"></section>
+
+  <section id="what_ive_written"></section>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+  <!-- your JS must load LAST -->
   <script src="script.js"></script>
+
 </body>
 </html>
