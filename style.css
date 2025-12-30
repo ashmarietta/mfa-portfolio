@@ -77,3 +77,21 @@ html {
     margin-left: 0;
   }
 }
+
+#what_ive_written ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+#what_ive_written li {
+  margin: 10px 0;
+}
+
+#what_ive_written a {
+  text-decoration: none;
+  color: #222;
+}
+
+#what_ive_written a:hover {
+  text-decoration: underline;
+}

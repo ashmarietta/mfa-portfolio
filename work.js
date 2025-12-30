@@ -20,3 +20,35 @@ async function loadWork() {
 }
 
 loadWork();
+
+async function loadWorksList() {
+  const res = await fetch("/content/works/");
+  const html = await res.text();
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, "text/html");
+
+  const links = [...doc.querySelectorAll("a")]
+    .map(a => a.getAttribute("href"))
+    .filter(href => href.endsWith(".md"));
+
+  let listHTML = "<h2>What I’ve Written</h2><ul>";
+
+  links.forEach(file => {
+    const slug = file.replace(".md", "");
+    const title = slug.replace(/-/g, " ");
+
+    listHTML += `
+      <li>
+        <a href="/work.html?slug=${slug}">
+          ${title}
+        </a>
+      </li>`;
+  });
+
+  listHTML += "</ul>";
+
+  document.getElementById("what_ive_written").innerHTML = listHTML;
+}
+
+loadWorksList();
