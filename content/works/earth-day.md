@@ -1,0 +1,26 @@
+---
+title: How to Treat Every Day like Earth Day
+type: Article
+published: true
+---
+Published May 4, 2024
+
+https://www.hercampus.com/school/slu/how-to-treat-every-day-like-earth-day/
+
+FIX ARTICLE LINKS!
+
+As we celebrate Earth Day and take time to appreciate Mother Earth’s natural splendor (and post photo dumps on Instagram), it is important to remember that, as beautiful and powerful as she is, she needs our love and care. Sure, it will take major efforts from some major countries and corporations to create a sustainable world, but there are actually many ways that ordinary people like you and me can get involved to slow the climate crisis.
+
+One of the easiest ways to help the Earth is simply to **be conscious of your consumption.** Do you really need four paper towels to dry your hands or the 20 napkins you threw into your paper to-go sack? While a hot shower is sometimes the answer to the day’s stressors, do you really need a 20-minute marathon shower seven days a week? I can almost guarantee you don’t need to leave every light on while running errands. In fact, a Princeton Review article on green living suggests using compact fluorescent lights, which last eight to 12 times longer, and keeping items plugged into a power strip that you can switch off when you leave the house, saving the planet and your wallet.
+
+Being conscious of your consumption also factors into what you eat. While many suggest that going vegan or reducing meat intake, especially red meat, can reduce your carbon footprint, this is obviously a huge lifestyle change to commit to. Starting by replacing beef once a week—even one meal a week—can make a substantial difference. According to a Stanford Report article, a ground beef hamburger has a carbon footprint almost 10 times higher than a chicken patty and around 20 times higher than a vegetarian patty. Even if you don’t want to skimp on the protein or can’t live without steak, you can still eliminate food waste. The report also shares that 37 percent of U.S. greenhouse emissions come from food waste. To combat this, consider spicing up your leftovers, composting your food scraps and meal planning in advance to avoid overbuying.
+
+Being a college student, I am sometimes amazed at how much paper some of my classes use instead of just relying on digital devices and the cloud. To compensate for this, I try to buy e-textbooks when I can; they are often cheaper and mean fewer heavy objects I have to lug across campus and on road trips. I also recently found Ecosia, an internet browser and not-for-profit company that plants and protects trees. Because search engines tend to be very profitable, Ecosia uses this information to dedicate 100 percent of its profits to planting over 200 million trees and counting. All you have to do is use the browser to do your classwork or make your Pinterest boards, and you will be helping the planet from the comfort of your couch. 
+
+Another major area of concern is transportation emissions, which are relatively easy to combat as a college student. Enjoy the fresh air and get your hot girl walks in instead of taking your car! Though sunset drives are an essential part of the college experience, consider switching to bike rides instead; you still get the gentle breeze and good vibes without the added emissions. If driving is unavoidable, you can try carpooling or use public transportation if it’s available. You could also use video conferencing and other new technology for meetings instead of commuting.
+
+In addition to these reduction strategies, another key to a sustainable lifestyle is **reusing and repurposing** what is already readily available. Thrifting is a great example of reuse (and gives you a fun excuse to have an outing with friends!). It also carries the added benefit for college students of being much more cost efficient! You can also donate your old clothes and reuse plastics when possible. When it comes to shopping, reusable bags can be a solution; however, because cotton is such a water-guzzling, labor-intensive crop, it takes 131 uses for a cotton bag to break even with a bag in terms of climate impact. I know they look really cute, and I love carrying my Trader Joe’s Washington, D.C.-themed tote out of the store. Just be sure to look for ones that are more sustainable!
+
+Lastly, we hear all the time about **recycling**, but how sustainable is it really? According to an article done by the Boise State University College of Business and Economics, “Recycling only reduces greenhouse gas emissions by 2-3 percent, whereas reducing consumption can reduce emissions by up to 20 percent.” It follows, then, that the three Rs (reduce, reuse, recycle) are actually in order. 
+
+We are made to be stewards of Planet A, and I honestly believe that most of these practices lead to a more holistic, balanced life, even without factoring in environmental effects. This Earth is the only one we get, and I think she’s pretty marvelous. We are just passing through, so it is up to us to leave her better than we found her.
