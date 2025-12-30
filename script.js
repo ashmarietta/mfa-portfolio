@@ -11,28 +11,24 @@ loadMarkdown("/content/pages/how_to_reach_me.md", "how_to_reach_me");
 loadMarkdown("/content/pages/what_im_working_on.md", "what_im_working_on");
 
 async function loadWorksList() {
-  const res = await fetch("/content/works/");
-  const parser = new DOMParser();
-  const html = await res.text();
-  const doc = parser.parseFromString(html, "text/html");
-
-  const links = [...doc.querySelectorAll("a")]
-    .map(a => a.getAttribute("href"))
-    .filter(href => href.endsWith(".md"));
+  const res = await fetch("https://api.github.com/repos/ashmarietta/mfa-portfolio/contents/content/works");
+  const files = await res.json();
 
   let listHTML = "<h2>What I’ve Written</h2><ul>";
 
-  links.forEach(file => {
-    const slug = file.replace(".md", "");
-    const title = slug.replace(/-/g, " ");
+  files
+    .filter(file => file.name.endsWith(".md"))
+    .forEach(file => {
+      const slug = file.name.replace(".md", "");
+      const title = slug.replace(/-/g, " ");
 
-    listHTML += `
-      <li>
-        <a href="/work.html?slug=${slug}">
-          ${title}
-        </a>
-      </li>`;
-  });
+      listHTML += `
+        <li>
+          <a href="/work.html?slug=${slug}">
+            ${title}
+          </a>
+        </li>`;
+    });
 
   listHTML += "</ul>";
 
