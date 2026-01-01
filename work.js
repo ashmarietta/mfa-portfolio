@@ -6,67 +6,36 @@ function getQueryParam(name) {
 async function loadWork() {
   const slug = getQueryParam("slug");
 
-  if (!slug) {
-    document.getElementById("work-content").innerHTML =
-      "<p>Work not found.</p>";
-    return;
-  }
-
   const res = await fetch(`/content/works/${slug}.md`);
   const text = await res.text();
 
-  document.getElementById("work-content").innerHTML =
-    marked.parse(text);
+  // split YAML front-matter
+  const parts = text.split('---');
+
+  let metadata = {};
+  let content = text;
+
+  if (parts.length > 2) {
+    const yaml = parts[1];
+    content = parts.slice(2).join('---');
+
+    yaml.split('\n').forEach(line => {
+      const [key, ...rest] = line.split(':');
+      if (key && rest.length) {
+        metadata[key.trim()] = rest.join(':').trim();
+      }
+    });
+  }
+
+  // Title fallback
+  const title = metadata.title || slug.replace(/-/g, ' ');
+
+  document.title = title + " — Allison Marietta";
+
+  document.getElementById("work-content").innerHTML = `
+    <h1>${title}</h1>
+    ${marked.parse(content)}
+  `;
 }
 
 loadWork();
-
-async function loadWorksList() {
-  const res = await fetch("https://api.github.com/repos/ashmarietta/mfa-portfolio/contents/content/works");
-  const files = await res.json();
-
-  const works = [];
-
-  for (const file of files) {
-    if (!file.name.endsWith(".md")) continue;
-
-    const slug = file.name.replace(".md", "");
-
-    const contentRes = await fetch(`/content/works/${file.name}`);
-    const text = await contentRes.text();
-
-    // TITLE — fallback to slug if missing
-    let title = slug.replace(/-/g, " ");
-    const titleMatch = text.match(/title:\s*(.+)/);
-    if (titleMatch) title = titleMatch[1].trim();
-
-    // DATE — fallback to 1970 if missing
-    let date = "1970-01-01";
-    const dateMatch = text.match(/date:\s*([0-9-]+)/);
-    if (dateMatch) date = dateMatch[1];
-
-    works.push({ slug, title, date });
-  }
-
-  // sort newest → oldest
-  works.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  // render list
-  let listHTML = "<h2>What I’ve Written</h2><ul>";
-
-  works.forEach(work => {
-    listHTML += `
-      <li>
-        <a href="/work.html?slug=${work.slug}">
-          ${work.title}
-        </a>
-        <span class="work-date">${work.date}</span>
-      </li>`;
-  });
-
-  listHTML += "</ul>";
-
-  document.getElementById("what_ive_written").innerHTML = listHTML;
-}
-
-loadWorksList();
