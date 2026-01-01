@@ -18,8 +18,8 @@ The concept of big and little funs is pretty straightforward. **Every week, you 
 These are some ideas I have done over the last couple months and some that I hope to add into the future!
 
 **Big Funs:**
-1. Go to a Cardinals game or sporting event.
 
+1. Go to a Cardinals game or sporting event.
 2. Walk around the Missouri Botanical Garden or another nature trail (preferably with a matcha in hand).
 3. Have a movie night (bonus points if you make snacks for the occasion).
 4. Treat yourself to a gourmet, homemade dinner (and invite your friends to join in).
