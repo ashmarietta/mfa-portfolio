@@ -22,17 +22,42 @@ async function loadWork() {
 loadWork();
 
 async function loadWorksList() {
-  const res = await fetch("/content/works/");
-  const html = await res.text();
-
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, "text/html");
-
-  const links = [...doc.querySelectorAll("a")]
-    .map(a => a.getAttribute("href"))
-    .filter(href => href.endsWith(".md"));
+  const res = await fetch("https://api.github.com/repos/ashmarietta/mfa-portfolio/contents/content/works");
+  const files = await res.json();
 
   let listHTML = "<h2>What I’ve Written</h2><ul>";
+
+  for (const file of files) {
+    if (!file.name.endsWith(".md")) continue;
+
+    const slug = file.name.replace(".md", "");
+
+    // fetch the markdown file
+    const contentRes = await fetch(`/content/works/${file.name}`);
+    const text = await contentRes.text();
+
+    // try to read the title from front-matter
+    let title = slug.replace(/-/g, " "); // fallback
+
+    const match = text.match(/title:\s*(.+)/);
+    if (match) {
+      title = match[1].trim();
+    }
+
+    listHTML += `
+      <li>
+        <a href="/work.html?slug=${slug}">
+          ${title}
+        </a>
+      </li>`;
+  }
+
+  listHTML += "</ul>";
+
+  document.getElementById("what_ive_written").innerHTML = listHTML;
+}
+
+loadWorksList();
 
   links.forEach(file => {
     const slug = file.replace(".md", "");
