@@ -2,6 +2,7 @@
 title: My Student-Athlete Experience
 type: Article
 published: true
+date: 2024-03-14
 ---
 Published March 14, 2024 
 

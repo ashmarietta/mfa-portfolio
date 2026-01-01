@@ -2,6 +2,7 @@
 title: How I Upgraded My Week to Find More Fun
 type: Article
 published: true
+date: 2024-10-05
 ---
 Published October 5, 2023
 

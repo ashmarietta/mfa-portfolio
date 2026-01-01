@@ -2,6 +2,7 @@
 title: Trust Your Gut
 type: Article
 published: true
+date: 2025-04-12
 ---
 Published April 12, 2025
 

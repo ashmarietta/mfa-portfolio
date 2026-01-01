@@ -2,6 +2,7 @@
 title: My Festive Favorites
 type: Article
 published: true
+date: 2023-11-22
 ---
 Published November 22, 2023
 

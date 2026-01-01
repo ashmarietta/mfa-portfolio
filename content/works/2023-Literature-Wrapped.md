@@ -2,6 +2,7 @@
 title: 2023 Literature Wrapped
 type: Article
 published: true
+date: 2023-12-13
 ---
 Published December 13, 2023
 

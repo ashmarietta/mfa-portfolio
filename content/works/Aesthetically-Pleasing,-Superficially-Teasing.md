@@ -2,6 +2,7 @@
 title: Aesthetically Pleasing, Superficially Teasing
 type: Article
 published: true
+date: 2024-10-13
 ---
 Published October 13, 2024
 

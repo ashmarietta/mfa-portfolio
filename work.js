@@ -25,49 +25,42 @@ async function loadWorksList() {
   const res = await fetch("https://api.github.com/repos/ashmarietta/mfa-portfolio/contents/content/works");
   const files = await res.json();
 
-  let listHTML = "<h2>What I’ve Written</h2><ul>";
+  const works = [];
 
   for (const file of files) {
     if (!file.name.endsWith(".md")) continue;
 
     const slug = file.name.replace(".md", "");
 
-    // fetch the markdown file
     const contentRes = await fetch(`/content/works/${file.name}`);
     const text = await contentRes.text();
 
-    // try to read the title from front-matter
-    let title = slug.replace(/-/g, " "); // fallback
+    // TITLE — fallback to slug if missing
+    let title = slug.replace(/-/g, " ");
+    const titleMatch = text.match(/title:\s*(.+)/);
+    if (titleMatch) title = titleMatch[1].trim();
 
-    const match = text.match(/title:\s*(.+)/);
-    if (match) {
-      title = match[1].trim();
-    }
+    // DATE — fallback to 1970 if missing
+    let date = "1970-01-01";
+    const dateMatch = text.match(/date:\s*([0-9-]+)/);
+    if (dateMatch) date = dateMatch[1];
 
-    listHTML += `
-      <li>
-        <a href="/work.html?slug=${slug}">
-          ${title}
-        </a>
-      </li>`;
+    works.push({ slug, title, date });
   }
 
-  listHTML += "</ul>";
+  // sort newest → oldest
+  works.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  document.getElementById("what_ive_written").innerHTML = listHTML;
-}
+  // render list
+  let listHTML = "<h2>What I’ve Written</h2><ul>";
 
-loadWorksList();
-
-  links.forEach(file => {
-    const slug = file.replace(".md", "");
-    const title = slug.replace(/-/g, " ");
-
+  works.forEach(work => {
     listHTML += `
       <li>
-        <a href="/work.html?slug=${slug}">
-          ${title}
+        <a href="/work.html?slug=${work.slug}">
+          ${work.title}
         </a>
+        <span class="work-date">${work.date}</span>
       </li>`;
   });
 

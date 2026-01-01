@@ -2,6 +2,7 @@
 title: Why I Love College Football
 type: Article
 published: true
+date: 2025-02-09
 ---
 Published February 9, 2025
 

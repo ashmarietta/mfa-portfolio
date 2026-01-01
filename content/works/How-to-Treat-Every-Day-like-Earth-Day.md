@@ -2,6 +2,7 @@
 title: How to Treat Every Day like Earth Day
 type: Article
 published: true
+date: 2024-05-04
 ---
 Published May 4, 2024
 

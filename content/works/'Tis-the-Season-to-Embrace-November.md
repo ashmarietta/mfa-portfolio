@@ -2,6 +2,7 @@
 title: "'Tis the Season to Embrace November"
 type: Article
 published: true
+date: 2024-11-20
 ---
 Published November 20, 2024
 
