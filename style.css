@@ -95,3 +95,6 @@ html {
 #what_ive_written a:hover {
   text-decoration: underline;
 }
+#what_ive_written h2 {
+  text-transform: uppercase;
+}
