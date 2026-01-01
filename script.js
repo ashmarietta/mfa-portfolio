@@ -5,10 +5,25 @@ async function loadMarkdown(url, targetId) {
     marked.parse(text);
 }
 
-// Single pages
-loadMarkdown("/content/pages/who_i_am.md", "who_i_am");
-loadMarkdown("/content/pages/how_to_reach_me.md", "how_to_reach_me");
-loadMarkdown("/content/pages/what_im_working_on.md", "what_im_working_on");
+async function loadMarkdown(url, targetId) {
+  const res = await fetch(url);
+  const text = await res.text();
+
+  // strip YAML front-matter if present
+  const parts = text.split('---');
+  let content = text;
+
+  if (parts.length > 2) {
+    content = parts.slice(2).join('---');
+  }
+
+  // remove a leading "Title:" label if present
+  content = content.replace(/^Title:\s*/i, '');
+
+  document.getElementById(targetId).innerHTML =
+    marked.parse(content);
+}
+
 
 async function loadWorksList() {
   const res = await fetch("https://api.github.com/repos/ashmarietta/mfa-portfolio/contents/content/works");
