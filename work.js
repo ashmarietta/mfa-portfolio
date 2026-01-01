@@ -1,41 +1,88 @@
-function getQueryParam(name) {
-  const url = new URL(window.location.href);
-  return url.searchParams.get(name);
-}
+// ----------- PAGE LOADER -----------
 
-async function loadWork() {
-  const slug = getQueryParam("slug");
+async function loadMarkdown(url, targetId) {
+  const res = await fetch(url);
+  let text = await res.text();
 
-  const res = await fetch(`/content/works/${slug}.md`);
-  const text = await res.text();
-
-  // split YAML front-matter
-  const parts = text.split('---');
-
-  let metadata = {};
-  let content = text;
-
-  if (parts.length > 2) {
-    const yaml = parts[1];
-    content = parts.slice(2).join('---');
-
-    yaml.split('\n').forEach(line => {
-      const [key, ...rest] = line.split(':');
-      if (key && rest.length) {
-        metadata[key.trim()] = rest.join(':').trim();
-      }
-    });
+  if (text.trim().startsWith('---')) {
+    const parts = text.split('---');
+    if (parts.length >= 3) {
+      text = parts.slice(2).join('---').trim();
+    }
   }
 
-  // Title fallback
-  const title = metadata.title || slug.replace(/-/g, ' ');
+  const lines = text.split('\n');
 
-  document.title = title + " — Allison Marietta";
+  if (lines[0].trim().toLowerCase().startsWith('title:')) {
+    lines[0] = lines[0].replace(/title:\s*/i, '').trim();
+  }
 
-  document.getElementById("work-content").innerHTML = `
-    <h1>${title}</h1>
-    ${marked.parse(content)}
-  `;
+  const content = lines.join('\n');
+
+  document.getElementById(targetId).innerHTML =
+    marked.parse(content);
 }
 
-loadWork();
+// call page loader
+loadMarkdown("/content/pages/who.md", "who_i_am");
+loadMarkdown("/content/pages/working.md", "what_im_working_on");
+loadMarkdown("/content/pages/contact.md", "how_to_reach_me");
+
+
+// ----------- WORKS LIST -----------
+
+async function loadWorksList() {
+  const res = await fetch(
+    "https://api.github.com/repos/ashmarietta/mfa-portfolio/contents/content/works"
+  );
+  const files = await res.json();
+
+  const works = [];
+
+  for (const file of files) {
+    if (!file.name.endsWith(".md")) continue;
+
+    const slug = file.name.replace(".md", "");
+
+    const contentRes = await fetch(`/content/works/${file.name}`);
+    const text = await contentRes.text();
+
+    const parts = text.split('---');
+
+    let title = slug.replace(/-/g, " ");
+    let date = "1970-01-01";
+
+    if (parts.length > 2) {
+      parts[1].split('\n').forEach(line => {
+        if (line.startsWith("title:")) {
+          title = line.replace("title:", "").trim();
+        }
+        if (line.startsWith("date:")) {
+          date = line.replace("date:", "").trim();
+        }
+      });
+    }
+
+    works.push({ slug, title, date });
+  }
+
+  works.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  let listHTML = "<h2>WHAT I’VE WRITTEN</h2><ul>";
+
+  works.forEach(work => {
+    listHTML += `
+      <li>
+        <a href="/work.html?slug=${work.slug}">
+          ${work.title}
+        </a>
+      </li>`;
+  });
+
+  listHTML += "</ul>";
+
+  document.getElementById("what_ive_written").innerHTML = listHTML;
+}
+
+// call works loader
+loadWorksList();
