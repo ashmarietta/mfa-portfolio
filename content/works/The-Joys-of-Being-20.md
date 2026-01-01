@@ -3,7 +3,7 @@ title: The Joys of Being 20
 type: Article
 published: true
 ---
-Published February 13, 2024
+Published February 13, 2024 
 
 https://www.hercampus.com/school/slu/the-joys-of-being-20/
 
