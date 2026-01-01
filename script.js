@@ -5,6 +5,11 @@ async function loadMarkdown(url, targetId) {
     marked.parse(text);
 }
 
+loadMarkdown("/content/pages/who.md", "who_i_am");
+loadMarkdown("/content/pages/working.md", "what_im_working_on");
+loadMarkdown("/content/pages/contact.md", "how_to_reach_me");
+
+
 async function loadMarkdown(url, targetId) {
   const res = await fetch(url);
   let text = await res.text();
