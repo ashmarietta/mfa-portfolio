@@ -7,19 +7,26 @@ async function loadMarkdown(url, targetId) {
 
 async function loadMarkdown(url, targetId) {
   const res = await fetch(url);
-  const text = await res.text();
+  let text = await res.text();
 
-  // strip YAML front-matter if present
-  const parts = text.split('---');
-  let content = text;
-
-  if (parts.length > 2) {
-    content = parts.slice(2).join('---');
+  // 1. Strip YAML front matter if present
+  if (text.startsWith('---')) {
+    const parts = text.split('---');
+    if (parts.length > 2) {
+      text = parts.slice(2).join('---').trim();
+    }
   }
 
-  // remove a leading "Title:" label if present
-  content = content.replace(/^Title:\s*/i, '');
+  // 2. If the first line begins with "Title:", remove ONLY the label
+  const lines = text.split('\n');
 
+  if (lines[0].trim().toLowerCase().startsWith('title:')) {
+    lines[0] = lines[0].replace(/title:\s*/i, '').trim();
+  }
+
+  const content = lines.join('\n');
+
+  // 3. Render it
   document.getElementById(targetId).innerHTML =
     marked.parse(content);
 }
