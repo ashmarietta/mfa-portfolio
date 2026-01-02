@@ -83,6 +83,4 @@ async function loadWorksList() {
 
   document.getElementById("what_ive_written").innerHTML = listHTML;
 }
-
-// call works loader
 loadWorksList();
