@@ -26,9 +26,9 @@ async function loadMarkdown(url, targetId) {
 
 // ----------- LOAD STATIC PAGES -----------
 
-loadMarkdown("/content/pages/who_i_am.md", "who_i_am");
-loadMarkdown("/content/pages/what_im_working_on.md", "what_im_working_on");
-loadMarkdown("/content/pages/how_to_reach_me.md", "how_to_reach_me");
+loadMarkdown("/content/pages/who_i_am.md", "who_i_am_body");
+loadMarkdown("/content/pages/what_im_working_on.md", "what_im_working_on_body");
+loadMarkdown("/content/pages/how_to_reach_me.md", "how_to_reach_me_body");
 
 // ----------- WORKS LIST -----------
 
@@ -75,7 +75,7 @@ async function loadWorksList() {
   // newest first
   works.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  let listHTML = "<h2>WHAT I’VE WRITTEN</h2><ul>";
+  let listHTML = "<ul>";
 
   works.forEach(work => {
     listHTML += `
@@ -88,7 +88,7 @@ async function loadWorksList() {
 
   listHTML += "</ul>";
 
-  document.getElementById("what_ive_written").innerHTML = listHTML;
+  document.getElementById("what_ive_written_body").innerHTML = listHTML;
 }
 
 // ----------- RUN IT -----------
