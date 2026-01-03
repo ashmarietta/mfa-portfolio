@@ -26,10 +26,9 @@ async function loadMarkdown(url, targetId) {
 
 // ----------- LOAD STATIC PAGES -----------
 
-loadMarkdown("/content/pages/who.md", "who_i_am");
-loadMarkdown("/content/pages/working.md", "what_im_working_on");
-loadMarkdown("/content/pages/contact.md", "how_to_reach_me");
-
+loadMarkdown("/content/pages/who_i_am.md", "who_i_am");
+loadMarkdown("/content/pages/what_im_working_on.md", "what_im_working_on");
+loadMarkdown("/content/pages/how_to_reach_me.md", "how_to_reach_me");
 
 // ----------- WORKS LIST -----------
 
