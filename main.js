@@ -24,7 +24,8 @@ async function loadMarkdown(url, targetId) {
     marked.parse(content);
 }
 
-// call AFTER defining function
+// ----------- LOAD STATIC PAGES -----------
+
 loadMarkdown("/content/pages/who.md", "who_i_am");
 loadMarkdown("/content/pages/working.md", "what_im_working_on");
 loadMarkdown("/content/pages/contact.md", "how_to_reach_me");
@@ -33,12 +34,16 @@ loadMarkdown("/content/pages/contact.md", "how_to_reach_me");
 // ----------- WORKS LIST -----------
 
 async function loadWorksList() {
-  const res = await fetch("https://api.github.com/repos/ashmarietta/mfa-portfolio/contents/content/works");
+
+  const res = await fetch(
+    "https://api.github.com/repos/ashmarietta/mfa-portfolio/contents/content/works"
+  );
   const files = await res.json();
 
   const works = [];
 
   for (const file of files) {
+
     if (!file.name.endsWith(".md")) continue;
 
     const slug = file.name.replace(".md", "");
@@ -52,10 +57,41 @@ async function loadWorksList() {
     let date = "1970-01-01";
 
     if (parts.length > 2) {
-      parts[1].split('\n').forEach(line => {
+
+      const meta = parts[1].split('\n');
+
+      meta.forEach(line => {
         if (line.startsWith("title:")) {
           title = line.replace("title:", "").trim();
         }
         if (line.startsWith("date:")) {
           date = line.replace("date:", "").trim();
         }
+      });
+    }
+
+    works.push({ slug, title, date });
+  }
+
+  // newest first
+  works.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  let listHTML = "<h2>WHAT I’VE WRITTEN</h2><ul>";
+
+  works.forEach(work => {
+    listHTML += `
+      <li>
+        <a href="/work.html?slug=${work.slug}">
+          ${work.title}
+        </a>
+      </li>`;
+  });
+
+  listHTML += "</ul>";
+
+  document.getElementById("what_ive_written").innerHTML = listHTML;
+}
+
+// ----------- RUN IT -----------
+
+loadWorksList();
