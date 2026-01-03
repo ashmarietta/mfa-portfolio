@@ -30,20 +30,41 @@
   </div>
 
   <script>
-    async function loadArticle() {
-      const params = new URLSearchParams(window.location.search);
-      const slug = params.get("slug");
+  async function loadArticle() {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
 
-      if (!slug) return;
+    if (!slug) return;
 
-      const res = await fetch(`/content/works/${slug}.md`);
-      const text = await res.text();
+    const res = await fetch(`/content/works/${slug}.md`);
+    const raw = await res.text();
 
-      document.getElementById("article").innerHTML =
-        marked.parse(text);
+    let title = "Untitled";
+    let body = raw;
+
+    // ---------- Strip YAML front-matter ----------
+    if (raw.startsWith('---')) {
+      const parts = raw.split('---');
+
+      // YAML lives in parts[1]
+      const yaml = parts[1];
+      body = parts.slice(2).join('---').trim();
+
+      yaml.split('\n').forEach(line => {
+        if (line.toLowerCase().startsWith("title:")) {
+          title = line.split(":").slice(1).join(":").trim();
+        }
+      });
     }
 
-    loadArticle();
+    // ---------- Render ----------
+    document.getElementById("article").innerHTML = `
+      <h1>${title}</h1>
+      ${marked.parse(body)}
+    `;
+  }
+
+  loadArticle();
   </script>
 
 </body>
