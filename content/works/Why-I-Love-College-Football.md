@@ -4,7 +4,7 @@ type: Article
 published: true
 date: 2025-02-09
 ---
-Published February 9, 2025
+Published February 9, 2025, in Her Campus Magazine
 
 https://www.hercampus.com/school/slu/why-i-love-college-football/
 
