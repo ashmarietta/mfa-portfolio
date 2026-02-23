@@ -41,6 +41,8 @@
 
     let title = "Untitled";
     let body = raw;
+    let attachment = ""; // NEW
+    
 
     // ---------- Strip YAML front-matter ----------
     if (raw.startsWith('---')) {
@@ -54,8 +56,15 @@
         if (line.toLowerCase().startsWith("title:")) {
           title = line.split(":").slice(1).join(":").trim();
         }
+        if (line.toLowerCase().startsWith("attachment:")) {
+          attachment = line.split(":").slice(1).join(":").trim();
+        }
       });
     }
+        // NEW: build optional download link (only if attachment exists)
+    const downloadLink = attachment
+      ? `<p class="download"><a href="${attachment}" target="_blank" rel="noopener">Download (.docx)</a></p>`
+      : "";
 
     // ---------- Render ----------
     document.getElementById("article").innerHTML = `
