@@ -9,4 +9,4 @@ She is passionate about writing fiction but also enjoys chronicling her many tra
 
 ![](/images/ashley-allie-141.jpeg)
 
-![](/images/ngo-6918.jpeg)
+![]()
