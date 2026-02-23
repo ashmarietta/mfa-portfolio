@@ -4,7 +4,7 @@ type: Article
 published: true
 date: 2024-02-13
 ---
-Published February 13, 2024 
+Published February 13, 2024, in Her Campus Magazine
 
 https://www.hercampus.com/school/slu/the-joys-of-being-20/
 

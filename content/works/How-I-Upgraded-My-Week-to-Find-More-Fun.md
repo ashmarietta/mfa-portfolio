@@ -4,7 +4,7 @@ type: Article
 published: true
 date: 2024-10-05
 ---
-Published October 5, 2023
+Published October 5, 2023, in Her Campus Magazine
 
 https://www.hercampus.com/school/slu/how-i-upgraded-my-week-to-find-more-fun/
 
@@ -12,7 +12,7 @@ https://www.hercampus.com/school/slu/how-i-upgraded-my-week-to-find-more-fun/
 
 Have you ever had a conversation with a friend who asked what you did this weekend, and your mind went completely blank? This semester, I finally decided that I was tired of giving the same answer of “nothing” or “just some homework.” I realized that, with 168 hours in the week, something remarkable or exciting had to have happened and, if not, I was doing something wrong.
 
- am an avid podcast listener, and one of my favorites is “[Before Breakfast](https://www.iheart.com/podcast/105-before-breakfast-30642889/),” which provides a quick daily dose of self-improvement advice and good energy to start my morning. On one episode, host Laura Vanderkam proposed the idea of adding one big and one little “fun” to every week. At first, the busy student-athlete in me shivered at the idea of adding two more items to my never-ending cycle of weights, practice, class and homework. After taking a moment, though, I realized that this was the perfect way to add more me-time and social events to my calendar. Transitioning from the summer to the school year, I knew I needed to find time to prioritize being over doing, and this seemed like the perfect place to start. 
+I am an avid podcast listener, and one of my favorites is “[Before Breakfast](https://www.iheart.com/podcast/105-before-breakfast-30642889/),” which provides a quick daily dose of self-improvement advice and good energy to start my morning. On one episode, host Laura Vanderkam proposed the idea of adding one big and one little “fun” to every week. At first, the busy student-athlete in me shivered at the idea of adding two more items to my never-ending cycle of weights, practice, class and homework. After taking a moment, though, I realized that this was the perfect way to add more me-time and social events to my calendar. Transitioning from the summer to the school year, I knew I needed to find time to prioritize being over doing, and this seemed like the perfect place to start. 
 
 The concept of big and little funs is pretty straightforward. **Every week, you simply build in one little activity and one big experience to give yourself something to look forward to and bring more joy to the week.**
 

@@ -4,7 +4,7 @@ type: Article
 published: true
 date: 2023-12-13
 ---
-Published December 13, 2023
+Published December 13, 2023, in Her Campus Magazine
 
 https://www.hercampus.com/school/slu/2023-literature-wrapped/
 
