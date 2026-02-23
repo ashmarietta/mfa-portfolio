@@ -4,7 +4,7 @@ type: Article
 published: true
 date: 2023-11-22
 ---
-Published November 22, 2023
+Published November 22, 2023, in Her Campus Magazine
 
 https://www.hercampus.com/school/slu/my-festive-favorites/
 
