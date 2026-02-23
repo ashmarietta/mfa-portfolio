@@ -62,9 +62,9 @@
       });
     }
         // NEW: build optional download link (only if attachment exists)
-    const downloadLink = attachment
-      ? `<p class="download"><a href="${attachment}" target="_blank" rel="noopener">Download (.docx)</a></p>`
-      : "";
+      const downloadLink = attachment
+        ? `<p class="download"><a href="${attachment}" target="_blank" rel="noopener">Download (.docx)</a></p>`
+        : "";
 
     // ---------- Render ----------
     document.getElementById("article").innerHTML = `
