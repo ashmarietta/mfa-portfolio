@@ -4,7 +4,7 @@ type: Article
 published: true
 date: 2024-03-14
 ---
-Published March 14, 2024 
+Published March 14, 2024, in Her Campus Magazine
 
 https://www.hercampus.com/school/slu/my-student-athlete-experience/
 
