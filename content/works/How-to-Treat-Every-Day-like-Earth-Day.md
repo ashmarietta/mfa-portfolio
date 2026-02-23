@@ -4,7 +4,7 @@ type: Article
 published: true
 date: 2024-05-04
 ---
-Published May 4, 2024
+Published May 4, 2024, in Her Campus Magazine
 
 https://www.hercampus.com/school/slu/how-to-treat-every-day-like-earth-day/
 
