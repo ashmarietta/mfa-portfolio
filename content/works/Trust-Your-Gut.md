@@ -4,7 +4,7 @@ type: Article
 published: true
 date: 2025-04-12
 ---
-Published April 12, 2025
+Published April 12, 2025, in Her Campus Magazine
 
 https://www.hercampus.com/school/slu/trust-your-gut-2/
 
