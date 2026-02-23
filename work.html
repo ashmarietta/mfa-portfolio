@@ -41,11 +41,12 @@
 
     let title = "Untitled";
     let body = raw;
-    let attachment = null;
 
     // ---------- Strip YAML front-matter ----------
     if (raw.startsWith('---')) {
       const parts = raw.split('---');
+
+      // YAML lives in parts[1]
       const yaml = parts[1];
       body = parts.slice(2).join('---').trim();
 
@@ -53,24 +54,10 @@
         if (line.toLowerCase().startsWith("title:")) {
           title = line.split(":").slice(1).join(":").trim();
         }
-        if (lower.startsWith("attachment:")) {
-            attachment = line.split(":").slice(1).join(":").trim();
-        }
       });
     }
 
     // ---------- Render ----------
-    let html = `<h1>${title}</h1>`;
-    html += marked.parse(body);
-
-    if (attachment) {
-      html += `
-        <p style="margin-top: 2rem;">
-          <a href="${attachment}" target="_blank">
-            Download this piece as a Word document
-          </a>
-        </p>
-      `;
     document.getElementById("article").innerHTML = `
       <h1>${title}</h1>
       ${marked.parse(body)}
