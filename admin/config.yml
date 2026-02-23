@@ -46,3 +46,4 @@ collections:
         options: ["Poem", "Short Story", "Novel Excerpt", "Essay", "Review", "Article", "Other"]
       - { label: "Published", name: "published", widget: "boolean", default: true, required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Attach Word File (optional)", name: "attachment", widget: "file", required: false }
