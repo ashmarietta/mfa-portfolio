@@ -41,7 +41,6 @@
 
     let title = "Untitled";
     let body = raw;
-    let attachment = null;
 
     // ---------- Strip YAML front-matter ----------
     if (raw.startsWith('---')) {
@@ -55,27 +54,14 @@
         if (line.toLowerCase().startsWith("title:")) {
           title = line.split(":").slice(1).join(":").trim();
         }
-        if (lower.startsWith("attachment:")) {
-          attachment = line.split(":").slice(1).join(":").trim();
-       }
-     });
-    }
-  
-    // ---------- Build HTML ----------
-    let html = `<h1>${title}</h1>`;
-    html += marked.parse(body);
-
-    if (attachment) {
-      html += `
-        <p style="margin-top: 2rem;">
-          <a href="${attachment}" target="_blank">
-            Download this piece as a Word document
-          </a>
-        </p>
-      `;
+      });
     }
 
-    document.getElementById("article").innerHTML = html;
+    // ---------- Render ----------
+    document.getElementById("article").innerHTML = `
+      <h1>${title}</h1>
+      ${marked.parse(body)}
+    `;
   }
 
   loadArticle();
