@@ -4,7 +4,7 @@ type: Article
 published: true
 date: 2024-10-05
 ---
-Published October 5, 2023
+Published October 5, 2023, in Her Campus Magazine
 
 https://www.hercampus.com/school/slu/how-i-upgraded-my-week-to-find-more-fun/
 
