@@ -4,7 +4,7 @@ type: Article
 published: true
 date: 2024-10-13
 ---
-Published October 13, 2024
+Published October 13, 2024, in Her Campus Magazine
 
 https://www.hercampus.com/school/slu/aesthetically-pleasing-superficially-teasing/
 
