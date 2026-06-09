@@ -5,6 +5,14 @@ Allison Marietta is a freelance writer and also finds herself as an assistant cr
 
 She is passionate about writing fiction but also enjoys chronicling her many travels, her experiences as an athlete and a human, and her gap year journey. She loves Christmas-scented candles, music, gluten-free baked goods, romantic comedies, and yoga. She has completed two half marathons and is avidly training for her third. You can almost always find her with a protein latte and book in hand.
 
+
+
+who i am - linkedin bio, what my goals are, a brief synopsis of my novel
+
+what i'm working on - novel progress, reading goal, articles - 
+
+what i've written - hc articles
+
 ![]()
 
 ![](/images/ashley-allie-141.jpeg)
