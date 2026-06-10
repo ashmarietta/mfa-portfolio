@@ -13,18 +13,24 @@ reading: >-
 
   My loose goal for the year is 60 books, including one non-fiction book per month, and I am at 35 total as of June 10!
 writing: >-
-  My main focus is a young-adult magical realism novel about a 
+  My main focus is a young-adult magical realism novel about a
+  \_\_\_\_\_\_\_\_\_\_\_\_\_\__. I finished the initial draft in mid-May, and I
+  am now editing to tighten language, better represent the main themes as well
+  as my protagonist's desires and misbeliefs, and heighten internal and external
+  conflict. My goal is to have the second draft finished by the time I leave for
+  my MFA program in mid-August. 
 
 
-  * Update 06/10/2026 - 
+  * Progress as of 06/10/2026 - 
 
 
-  On deck
+  Articles on deck
 
 
-  * An experience article on transitioning from Division I athletics to running half marathons
+  1. How I got into MFA programs
 
+  2. Things to consider before taking a gap year
 
-  what i'm working on - novel progress, articles, brief synopsis of my novel, what my goals are
+  3. My daily writing routine
 ---
 Placeholder. Edit me in the CMS.
